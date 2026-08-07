@@ -10,7 +10,7 @@ import SearchOverlay from './component/Search'
 import LoginPage from './pages/Login'
 import Signup from './pages/Signup'
 import ProductDetailsPage from './pages/Product'
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 
 function AppRoutes() {
@@ -39,9 +39,9 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <HashRouter>
+      <BrowserRouter>
         <AppRoutes />
-      </HashRouter>
+      </BrowserRouter>
     </AuthProvider>
   )
 }
