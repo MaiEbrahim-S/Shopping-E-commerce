@@ -19,7 +19,7 @@ function AppRoutes() {
 
   return (
     <>
-      <Routes location={isCardThisOpen ? { pathname: '/' } : location}>
+      <Routes location={isCardThisOpen ? { pathname: '/' } : location} basename="/E-Commerce">
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product" element={<ProductDetailsPage />} />
