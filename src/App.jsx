@@ -19,7 +19,7 @@ function AppRoutes() {
 
   return (
     <>
-      <Routes location={isCardThisOpen ? { pathname: '/' } : location} basename="/E-Commerce">
+      <Routes location={isCardThisOpen ? { pathname: '/' } : location}>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/product" element={<ProductDetailsPage />} />
@@ -39,7 +39,7 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/E-Commerce">
         <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
