@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://MaiEbrahim-S.github.io/E-Commerce",npm run deploy
+  "homepage": "https://MaiEbrahim-S.github.io/E-Commerce",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
