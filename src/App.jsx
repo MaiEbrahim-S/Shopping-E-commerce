@@ -39,7 +39,7 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Shopping-E-commerce/">
         <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
