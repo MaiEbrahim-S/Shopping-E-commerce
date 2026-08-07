@@ -18,8 +18,8 @@ library.add(
   faLock,
   faHome,
   faCircleCheck,
-  faMagnifyingGlass, 
-  faHeart, 
+  faMagnifyingGlass,
+  faHeart,
   faCartShopping,
-  faHouse
+  faHome
 );

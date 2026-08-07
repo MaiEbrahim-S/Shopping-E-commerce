@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react'
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -29,18 +30,18 @@ export function AuthProvider({ children }) {
     return () => unsubscribe()
   }, [])
 
-  const login = async (email, password) => {
+  const login = useCallback(async (email, password) => {
     return signInWithEmailAndPassword(auth, email, password)
-  }
+  }, [])
 
-  const logout = async () => {
+  const logout = useCallback(async () => {
     await signOut(auth)
     setCurrentUser(null)
-  }
+  }, [])
 
-  const signup = async (email, password) => {
+  const signup = useCallback(async (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
-  }
+  }, [])
 
   const register = signup
 
@@ -53,7 +54,7 @@ export function AuthProvider({ children }) {
       register,
       signup,
     }),
-    [currentUser]
+    [currentUser, login, logout, register, signup]
   )
 
   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>
