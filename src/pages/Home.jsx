@@ -54,29 +54,28 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
       <Header />
      
       {/* 2. Hero Section */}
-      <section className="bg-cyan-50 py-12 md:py-20 relative overflow-hidden">
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <section className="bg-cyan-50 py-10 md:py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
-          <div className="space-y-6 max-w-lg z-10">
-            <span className="text-black text-2xl  tracking-wide mr-20 block">براندات نسائي عالمية</span>
-            <h1 className="text-3xl md:text-5xl font-black text-black leading-tight mr-8">
+          <div className="space-y-5 max-w-lg z-10 text-center md:text-right">
+            <span className="text-black text-xl md:text-2xl tracking-wide block md:mr-20">براندات نسائي عالمية</span>
+            <h1 className="text-3xl md:text-5xl font-black text-black leading-tight md:mr-8">
               أحدث أدوات الجمال <br />
             </h1>
-            <span className="text-black text-2xl  tracking-wide mr-20 block">براندات نسائي عالمية</span>
-            <Link to="/products" className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-medium px-8 py-3 rounded-full shadow-md transition duration-300 transform hover:scale-105 mr-25 mt-4">
+            <span className="text-black text-xl md:text-2xl tracking-wide block md:mr-20">براندات نسائي عالمية</span>
+            <Link to="/products" className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-medium px-8 py-3 rounded-full shadow-md transition duration-300 transform hover:scale-105 md:mr-25 mt-2 md:mt-4">
               اكتشف الان
             </Link>
-            
-            </div>
+          </div>
 
           {/* Image Content */}
-          <div className="relative flex justify-center">
+          <div className="relative flex justify-center order-first md:order-last">
             {/* Soft background shape */}
-            <div className="absolute inset-0 bg-cyan-200/40 rounded-full filter blur-xl w-72 h-72 md:w-96 md:h-96 mx-auto my-auto -z-10"></div>
+            <div className="absolute inset-0 bg-cyan-200/40 rounded-full filter blur-xl w-60 h-60 sm:w-72 sm:h-72 md:w-96 md:h-96 mx-auto my-auto -z-10"></div>
             <img 
               src={heroImages[activeHeroIndex]} 
               alt="Hero Model" 
-              className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-white shadow-lg"
+              className="w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-white shadow-lg"
             />
           </div>
         </div>
@@ -115,61 +114,58 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
 
       {/* 3. Features Features Info Bar */}
       <section className="border-y border-gray-100 py-6 bg-gray-50/50">
-        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['car-side']} /></span>
-            <h4 className="font-bold text-gray-800 text-sm">توصيل مجاني</h4>
-            <p className="text-xs text-gray-500">للطلبات أكثر من 200 جنيه</p>
+            <span className="text-xl md:text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['car-side']} /></span>
+            <h4 className="font-bold text-gray-800 text-xs md:text-sm">توصيل مجاني</h4>
+            <p className="text-[10px] md:text-xs text-gray-500">للطلبات أكثر من 200 جنيه</p>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['mobile-screen']} /></span>
-            <h4 className="font-bold text-gray-800 text-sm">دعم فني</h4>
-            <p className="text-xs text-gray-500">دعم علي مدار الساعة</p>
+            <span className="text-xl md:text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['mobile-screen']} /></span>
+            <h4 className="font-bold text-gray-800 text-xs md:text-sm">دعم فني</h4>
+            <p className="text-[10px] md:text-xs text-gray-500">دعم علي مدار الساعة</p>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['wallet']} /></span>
-            <h4 className="font-bold text-gray-800 text-sm">إسترجاع الاموال</h4>
-            <p className="text-xs text-gray-500">استرداد امن لاموالك او الاستبدال</p>
+            <span className="text-xl md:text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['wallet']} /></span>
+            <h4 className="font-bold text-gray-800 text-xs md:text-sm">استرجاع الاموال</h4>
+            <p className="text-[10px] md:text-xs text-gray-500">استرداد امن لاموالك او الاستبدال</p>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['gift']} /></span>
-            <h4 className="font-bold text-gray-800 text-sm">عروض مميزة</h4>
-            <p className="text-xs text-gray-500">خصومات كبيرة علي منتجاتنا</p>
-            
+            <span className="text-xl md:text-2xl bg-gray-150 text-cyan-500"><FontAwesomeIcon icon={byPrefixAndName.fas['gift']} /></span>
+            <h4 className="font-bold text-gray-800 text-xs md:text-sm">عروض مميزة</h4>
+            <p className="text-[10px] md:text-xs text-gray-500">خصومات كبيرة علي منتجاتنا</p>
           </div>
         </div>
       </section>
 
       {/* 4. Category Banners (Split 50/50) */}
-      <section className="container mx-auto px-4 py-12 grid md:grid-cols-2 gap-6">
+      <section className="container mx-auto px-4 py-8 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Kids Clothing Banner */}
-        <div className="bg-cyan-100 rounded-xl p-8 flex items-center justify-between overflow-hidden relative min-h-[180px]">
-          <div className="space-y-2 p-15 z-10">
-            <img 
+        <div className="bg-cyan-100 rounded-xl p-5 md:p-8 flex items-center justify-between overflow-hidden relative min-h-[170px] md:min-h-[180px]">
+          <div className="space-y-2 z-10 text-right w-full md:w-auto">
+            <h3 className="text-lg md:text-3xl font-bold text-black">ملابس الأطفال</h3>
+            <p className="text-base md:text-xl font-bold text-black">خصم 35%</p>
+            <a href="#" className="text-[11px] md:text-xs font-bold text-black underline block pt-2">تسوّق الآن</a>
+          </div>
+          <img 
             src={childc} 
             alt="Kids Fashion" 
-            className="w-32 h-full object-cover absolute left-10 bottom-0 mix-blend-multiply"
+            className="w-20 h-20 md:w-32 md:h-full object-cover absolute left-4 bottom-0 mix-blend-multiply"
           />
-            <h3 className="text-sm md:text-3xl font-bold text-black ">ملابس الأطفال</h3>
-            <p className=" text-xl font-bold text-black">خصم 35%</p>
-            <a href="#" className="text-xs font-bold text-black underline block pt-2">تسوّق الآن</a>
-          </div>
-          
         </div>
 
         {/* Girls Dresses Banner */}
-        <div className="bg-pink-100 rounded-xl p-8 flex items-center justify-between overflow-hidden relative min-h-[180px]">
-          <div className="space-y-2 p-15 z-10">
-             <img 
+        <div className="bg-pink-100 rounded-xl p-5 md:p-8 flex items-center justify-between overflow-hidden relative min-h-[170px] md:min-h-[180px]">
+          <div className="space-y-2 z-10 text-right w-full md:w-auto">
+            <p className="text-sm font-bold text-black">خصم كبير</p>
+            <h3 className="text-lg md:text-2xl font-bold text-black">ملابس رجالي</h3>
+            <a href="#" className="text-[11px] md:text-xs font-bold text-black underline block pt-2">تسوّق الآن</a>
+          </div>
+          <img 
             src={child} 
             alt="Girls Fashion" 
-            className="w-32 h-full object-cover absolute left-10 bottom-0 mix-blend-multiply"
+            className="w-20 h-20 md:w-32 md:h-full object-cover absolute left-4 bottom-0 mix-blend-multiply"
           />
-            <p className=" text-sm font-bold text-black">خصم كبير</p>
-            <h3 className="text-xl md:text-2xl font-bold text-black">ملابس رجالي</h3>
-            <a href="#" className="text-xs font-bold text-black underline block pt-2">تسوّق الآن</a>
-          </div>
-         
         </div>
       </section>
 
@@ -182,9 +178,9 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
         </div>
 
         {/* Products Grid (8 Items Layout) */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {images.map((imagepath,item) => (
-            <div key={item} className="group border border-gray-300 rounded-xl p-3 bg-white  transition relative">
+            <div key={item} className="group border border-gray-300 rounded-xl p-2 md:p-3 bg-white transition relative">
               {/* Wishlist Button */}
               <button
                 type="button"
@@ -195,97 +191,93 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
                     return next;
                   });
                 }}
-                className={`absolute top-5 left-5 z-10 bg-white/90 p-1.5 rounded-full cursor-pointer shadow-sm text-xs transition ${
+                className={`absolute top-3 md:top-5 left-3 md:left-5 z-10 bg-white/90 p-1.5 rounded-full cursor-pointer shadow-sm text-[10px] md:text-xs transition ${
                   favoriteGrid[item] ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
                 }`}
               >
                 <FontAwesomeIcon icon={byPrefixAndName.fas['heart']} />
               </button>
               
-              {/* Image Container */} 
-              <div className="bg-gray-200 rounded-lg overflow-hidden mb-3 aspect-square relative">
+              {/* Image Container */}
+              <div className="bg-gray-200 rounded-lg overflow-hidden mb-2 md:mb-3 aspect-square relative">
                 <img 
                   src={imagepath}
                   alt="Product"
-                  className="w-full h-full "
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Details */}
-              <div className="space-y-1 text-center md:text-right flex justify-between">
-                <div>
-                <div className="flex justify-center md:justify-start text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
-                <h3 className="text-sm font-bold text-gray-700 truncate">بلوزة قطنية بيضاء كاجوال</h3>
-                <div className="flex justify-center md:justify-start gap-1 pt-2">
+              <div className="p-2 md:p-3 border rounded-xl bg-white shadow-sm space-y-2">
+                <div className="flex justify-center text-amber-400 text-[10px] md:text-xs">⭐⭐⭐⭐⭐</div>
+                <h3 className="text-xs md:text-sm font-bold text-gray-700 text-center md:text-right truncate">بلوزة قطنية بيضاء كاجوال</h3>
+                <div className="flex justify-center gap-1 pt-1 md:justify-start">
                   {['XL', 'L', 'M', 'S'].map(size => (
-                    <span key={size} className="text-[10px] border border-gray-200 px-1 py-0.5 rounded text-gray-500 hover:border-cyan-500 hover:text-cyan-500 cursor-pointer">{size}</span>
+                    <span key={size} className="text-[9px] md:text-[10px] border border-gray-200 px-1 py-0.5 rounded text-gray-500 hover:border-cyan-500 hover:text-cyan-500 cursor-pointer">{size}</span>
                   ))}
                 </div>
-                </div>
-                <div className="flex items-center justify-center w-1/7 flex-col md:justify-start gap-2">
-                  <span className="text-cyan-600 font-extrabold text-sm">500 ج.م</span>
-                  <span className="text-gray-400 line-through text-xs">800ج.م</span>
+                <div className="flex flex-col items-center md:items-start gap-1">
+                  <span className="text-cyan-600 font-extrabold text-xs md:text-sm">500 ج.م</span>
+                  <span className="text-gray-400 line-through text-[10px] md:text-xs">800ج.م</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </section>
-      <section className="bg-cyan-100 my-12 relative overflow-hidden min-h-[260px] flex items-center">
-  <div className="container mx-auto px-10 grid md:grid-cols-3 items-center w-full py-8 text-center">
-    
-    <div className="hidden md:flex justify-start">
-      <img 
-        src={c3} 
-        alt="Flash Sale Kid Right" 
-        className="h-80 object-contain mix-blend-multiply"
-      />
-    </div>
+      <section className="bg-cyan-100 my-8 md:my-12 relative overflow-hidden min-h-[260px] flex items-center">
+        <div className="container mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-3 items-center w-full py-6 md:py-8 text-center">
+          <div className="hidden md:flex justify-start">
+            <img 
+              src={c3} 
+              alt="Flash Sale Kid Right" 
+              className="h-80 object-contain mix-blend-multiply"
+            />
+          </div>
 
-    <div className="flex flex-col items-center justify-center z-10 space-y-4">
-      <span className="text-black font-bold text-3xl block">أكبر خصم على الإطلاق</span>
-      <h2 className="text-3xl md:text-5xl font-bold text-purple-500">احدث ملابس الاطفال</h2>
-      
-      {/* الـ Timer Counter */}
-      <div className="flex justify-center gap-4 text-purple-500 font-bold pt-2">
-        <div className="backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
-          <div className="text-3xl font-bold text-black">00</div>
-          <div className="text-3xl text-black">يوم</div>
-        </div>
-        <div className="backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
-          <div className="text-3xl font-bold text-black">00</div>
-          <div className="text-3xl text-black">ساعة</div>
-        </div>
-        <div className="backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
-          <div className="text-3xl font-bold text-black">00</div>
-          <div className="text-3xl text-black">دقيقة</div>
-        </div>
-        <div className="backdrop-blur-sm rounded-lg px-3 py-2 min-w-[60px]">
-          <div className="text-3xl font-bold text-black">00</div>
-          <div className="text-3xl text-purple-500">ثانية</div>
-        </div>
-      </div>
+          <div className="flex flex-col items-center justify-center z-10 space-y-3 md:space-y-4">
+            <span className="text-black font-bold text-xl md:text-3xl block">أكبر خصم على الإطلاق</span>
+            <h2 className="text-2xl md:text-5xl font-bold text-purple-500">احدث ملابس الاطفال</h2>
+            
+            {/* الـ Timer Counter */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-purple-500 font-bold pt-2 w-full max-w-md mx-auto">
+              <div className="backdrop-blur-sm rounded-lg px-2 py-2 min-w-0">
+                <div className="text-2xl md:text-3xl font-bold text-black">00</div>
+                <div className="text-base md:text-3xl text-black">يوم</div>
+              </div>
+              <div className="backdrop-blur-sm rounded-lg px-2 py-2 min-w-0">
+                <div className="text-2xl md:text-3xl font-bold text-black">00</div>
+                <div className="text-base md:text-3xl text-black">ساعة</div>
+              </div>
+              <div className="backdrop-blur-sm rounded-lg px-2 py-2 min-w-0">
+                <div className="text-2xl md:text-3xl font-bold text-black">00</div>
+                <div className="text-base md:text-3xl text-black">دقيقة</div>
+              </div>
+              <div className="backdrop-blur-sm rounded-lg px-2 py-2 min-w-0">
+                <div className="text-2xl md:text-3xl font-bold text-black">00</div>
+                <div className="text-base md:text-3xl text-purple-500">ثانية</div>
+              </div>
+            </div>
 
-      <Link to="/products" className="bg-purple-800 hover:bg-purple-900 text-white text-sm font-bold px-8 py-2.5 rounded-full mt-4 transition shadow-md inline-block text-center">
-        تسوق الآن
-      </Link>
-    </div>
+            <Link to="/products" className="bg-purple-800 hover:bg-purple-900 text-white text-sm font-bold px-8 py-2.5 rounded-full mt-2 md:mt-4 transition shadow-md inline-block text-center">
+              تسوق الآن
+            </Link>
+          </div>
 
-    
-    <div className="hidden md:flex justify-end">
-      <img 
-        src={c1} 
-        alt="Flash Sale Kid Left" 
-        className="h-64 object-contain mix-blend-multiply"
-      />
-    </div>
-  </div>
-</section>
+          <div className="hidden md:flex justify-end">
+            <img 
+              src={c1} 
+              alt="Flash Sale Kid Left" 
+              className="h-64 object-contain mix-blend-multiply"
+            />
+          </div>
+        </div>
+      </section>
       {/* 7. Sidebar Category + Carousel Section */}
-      <section className="container mx-auto px-4 py-8 grid md:grid-cols-4 gap-6">
+      <section className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
         
         {/* Right Sidebar Menu */}
-        <div className="md:col-span-1 border border-cyan-100 rounded-xl overflow-hidden bg-white shadow-sm h-fit">
+        <div className="md:col-span-1 border border-cyan-100 rounded-xl overflow-hidden bg-white shadow-sm h-fit order-2 md:order-1">
           <div className="bg-cyan-500 text-white font-bold p-4 text-center">تسوق عبر الفئات</div>
           <ul className="divide-y divide-gray-100 text-gray-700 text-sm font-medium">
             <li className="p-3.5 hover:bg-cyan-50 hover:text-cyan-600 transition cursor-pointer pr-6">رجالي</li>
@@ -297,7 +289,7 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
         </div>
 
         {/* Left Side Small Products Slider Display */}
-        <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+        <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center order-1 md:order-2">
           {ima2.map((image,item) => (
             <div key={item} className="border border-gray-100 rounded-xl p-3 bg-white text-center md:text-right relative">
               <button
@@ -320,25 +312,25 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
                 <img 
                   src={image}
                   alt="Product item" 
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div className="space-y-1 text-center md:text-right flex justify-between">
+              <div className="space-y-1 text-center md:text-right flex flex-col md:flex-row md:justify-between">
                 <div>
-                <div className="flex justify-center md:justify-start text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
-                <h3 className="text-sm font-bold text-gray-700 truncate">بلوزة قطنية بيضاء كاجوال</h3>
-                <div className="flex justify-center md:justify-start gap-1 pt-2">
-                  {['XL', 'L', 'M', 'S'].map(size => (
-                    <span key={size} className="text-[10px] border border-gray-200 px-1.5 py-0.5 rounded text-gray-500 hover:border-cyan-500 hover:text-cyan-500 cursor-pointer">{size}</span>
-                  ))}
+                  <div className="flex justify-center md:justify-start text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
+                  <h3 className="text-sm font-bold text-gray-700 truncate">بلوزة قطنية بيضاء كاجوال</h3>
+                  <div className="flex justify-center md:justify-start gap-1 pt-2">
+                    {['XL', 'L', 'M', 'S'].map(size => (
+                      <span key={size} className="text-[10px] border border-gray-200 px-1.5 py-0.5 rounded text-gray-500 hover:border-cyan-500 hover:text-cyan-500 cursor-pointer">{size}</span>
+                    ))}
+                  </div>
                 </div>
-                </div>
-                <div className="flex items-center justify-center flex-col md:justify-start gap-2">
+                <div className="flex items-center justify-center md:items-start flex-col gap-2 mt-2 md:mt-0">
                   <span className="text-cyan-600 font-extrabold text-sm">500 ج.م</span>
                   <span className="text-gray-400 line-through text-xs">800ج.م</span>
                 </div>
               </div>
-          </div>
+            </div>
           ))}
         </div>
       </section>
@@ -350,31 +342,30 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
             البرندات
           </h2>
         </div>
-        <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition duration-300">
-          <span className=" w-30 h-30 text-gray-700"><img src={p1} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p2} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p3} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p4} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p5} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p1} /></span>
-          <span className=" w-30 h-30 text-gray-700"><img src={p3} /></span>
-          
+        <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-4 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition duration-300">
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p1} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p2} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p3} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p4} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p5} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p1} alt="brand" className="w-full h-full object-contain" /></span>
+          <span className="w-20 h-20 md:w-30 md:h-30 text-gray-700"><img src={p3} alt="brand" className="w-full h-full object-contain" /></span>
         </div>
       </section>
 
       {/* 9. Blog / Instagram Style Triple Image Section */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-2 text-center">
-            <img src={l1} alt="Blog 1" className="rounded-xl w-full h-80 object-cover shadow-sm" />
+            <img src={l1} alt="Blog 1" className="rounded-xl w-full h-56 md:h-80 object-cover shadow-sm" />
             <p className="text-xs font-bold text-gray-700 pt-3">استمتعي بأجمل صيحات الموضة في العبايات</p>
           </div>
           <div className="space-y-2 text-center">
              <p className="text-xs font-bold text-gray-700 pt-3">احصلي على أفضل الإكسسوارات النسائية المميزة</p>
-            <img src={l2} alt="Blog 2" className="rounded-xl w-full h-80 object-cover shadow-sm" />
+            <img src={l2} alt="Blog 2" className="rounded-xl w-full h-56 md:h-80 object-cover shadow-sm" />
             </div>
           <div className="space-y-2 text-center">
-            <img src={l3} alt="Blog 3" className="rounded-xl w-full h-80 object-cover shadow-sm" />
+            <img src={l3} alt="Blog 3" className="rounded-xl w-full h-56 md:h-80 object-cover shadow-sm" />
             <p className="text-xs font-bold text-gray-700 pt-3">مع اجمل صيحات الموضة والجينز</p>
           </div>
         </div>

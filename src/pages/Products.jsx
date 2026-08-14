@@ -3,6 +3,7 @@ import Footer from "../component/Footer";
 import products from "../assets/products.png"
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import c1 from "../assets/c1.png";
 import c3 from "../assets/c3.png";
 import m3 from "../assets/m3.png";
@@ -21,6 +22,28 @@ export default function ProductCatalogPage() {
   const images = [img1, c1,c3];
   const imag = [img1 , m3,m4,child,img1,c1,c3,img1,l3];
   const img = [img1,c5,m3,m4,child];
+  const MIN_PRICE = 10;
+  const MAX_PRICE = 1500;
+  const [minPrice, setMinPrice] = useState(200);
+  const [maxPrice, setMaxPrice] = useState(1200);
+
+  const minPercent = ((minPrice - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+  const maxPercent = ((maxPrice - MIN_PRICE) / (MAX_PRICE - MIN_PRICE)) * 100;
+
+  const handleMinChange = (event) => {
+    const nextMin = Number(event.target.value);
+    if (nextMin <= maxPrice - 50) {
+      setMinPrice(nextMin);
+    }
+  };
+
+  const handleMaxChange = (event) => {
+    const nextMax = Number(event.target.value);
+    if (nextMax >= minPrice + 50) {
+      setMaxPrice(nextMax);
+    }
+  };
+
   const byPrefixAndName = {
     fas: {
       'arrow-left': faArrowLeft,
@@ -75,14 +98,47 @@ export default function ProductCatalogPage() {
               <span className="text-xs text-gray-400">▼</span>
             </h3>
             <div className="px-2">
-              <div className="h-1.5 bg-gray-200 rounded-full relative">
-                <div className="absolute left-1/4 right-1/4 h-full bg-cyan-500 rounded-full"></div>
-                <div className="absolute left-1/4 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-cyan-500 rounded-full cursor-pointer shadow-sm"></div>
-                <div className="absolute right-1/4 top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-cyan-500 rounded-full cursor-pointer shadow-sm"></div>
+              <div className="relative h-6">
+                <div
+                  className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-200"
+                  style={{
+                    background: `linear-gradient(to right, #e5e7eb 0%, #e5e7eb ${minPercent}%, #06b6d4 ${minPercent}%, #06b6d4 ${maxPercent}%, #e5e7eb ${maxPercent}%, #e5e7eb 100%)`
+                  }}
+                />
+
+                <input
+                  type="range"
+                  min={MIN_PRICE}
+                  max={MAX_PRICE}
+                  value={minPrice}
+                  onChange={handleMinChange}
+                  className="absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
+                  style={{ zIndex: 2 }}
+                />
+
+                <input
+                  type="range"
+                  min={MIN_PRICE}
+                  max={MAX_PRICE}
+                  value={maxPrice}
+                  onChange={handleMaxChange}
+                  className="absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
+                  style={{ zIndex: 3 }}
+                />
+
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full border-2 border-cyan-500 bg-white shadow-sm"
+                  style={{ left: `calc(${minPercent}% - 8px)` }}
+                />
+                <div
+                  className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full border-2 border-cyan-500 bg-white shadow-sm"
+                  style={{ left: `calc(${maxPercent}% - 8px)` }}
+                />
               </div>
+
               <div className="flex justify-between items-center text-xs text-gray-500 mt-4">
-                <span>10 ج.م</span>
-                <span>1500  ج.م</span>
+                <span>{minPrice} ج.م</span>
+                <span>{maxPrice} ج.م</span>
               </div>
             </div>
           </div>
