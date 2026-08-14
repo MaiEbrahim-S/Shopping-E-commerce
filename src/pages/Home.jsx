@@ -316,7 +316,7 @@ const [favoriteSmall, setFavoriteSmall] = useState(() => Array(ima2.length).fill
                 />
               </div>
               <div className="space-y-1 text-center md:text-right flex flex-col md:flex-row md:justify-between">
-                <div>
+                <div className ="">
                   <div className="flex justify-center md:justify-start text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
                   <h3 className="text-sm font-bold text-gray-700 truncate">بلوزة قطنية بيضاء كاجوال</h3>
                   <div className="flex justify-center md:justify-start gap-1 pt-2">

@@ -53,8 +53,45 @@ export default function ProductCatalogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50/50 font-sans">
-      <Header />
+    <>
+      <style>{`
+        .price-range-slider {
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          pointer-events: auto;
+        }
+
+        .price-range-slider::-webkit-slider-runnable-track {
+          height: 6px;
+          background: transparent;
+        }
+
+        .price-range-slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 0;
+          height: 0;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+        .price-range-slider::-moz-range-thumb {
+          width: 0;
+          height: 0;
+          border: none;
+          background: transparent;
+          cursor: pointer;
+        }
+
+        .price-range-slider::-moz-range-track {
+          background: transparent;
+        }
+      `}</style>
+
+      <div className="min-h-screen bg-gray-50/50 font-sans">
+        <Header />
 
       <div dir={pageDir} lang={i18n.language}>
       {/* 2. Hero Banner / Breadcrumbs */}
@@ -112,7 +149,7 @@ export default function ProductCatalogPage() {
                   max={MAX_PRICE}
                   value={minPrice}
                   onChange={handleMinChange}
-                  className="absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
+                  className="price-range-slider absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
                   style={{ zIndex: 2 }}
                 />
 
@@ -122,17 +159,8 @@ export default function ProductCatalogPage() {
                   max={MAX_PRICE}
                   value={maxPrice}
                   onChange={handleMaxChange}
-                  className="absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
+                  className="price-range-slider absolute inset-0 h-1.5 w-full appearance-none bg-transparent cursor-pointer"
                   style={{ zIndex: 3 }}
-                />
-
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full border-2 border-cyan-500 bg-white shadow-sm"
-                  style={{ left: `calc(${minPercent}% - 8px)` }}
-                />
-                <div
-                  className="absolute top-1/2 -translate-y-1/2 h-4 w-4 rounded-full border-2 border-cyan-500 bg-white shadow-sm"
-                  style={{ left: `calc(${maxPercent}% - 8px)` }}
                 />
               </div>
 
@@ -300,5 +328,6 @@ export default function ProductCatalogPage() {
       </div>
       <Footer />
     </div>
+    </>
   );
 }
